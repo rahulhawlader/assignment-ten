@@ -3,14 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Regiter.css'
 
 const Register = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    // const navigateLogin = () => {
-    //     navigate('/Login')
-    // }
+    const navigateLogin = () => {
+        navigate('/Login')
+    }
     return (
         <div className='register-form'>
-            {/* <form >
+            <form >
                 <h1>Please Register</h1>
                 <input type="text" name="name" id="" placeholder='Your Name' />
 
@@ -20,7 +20,7 @@ const Register = () => {
                 <input type="submit" value="Register" />
 
             </form>
-            <p>Already have an Account? <Link to='/Login' className='text-danger  pe-auto text-decoration-none' onClick={navigateLogin}> Please Login</Link></p> */}
+            <p>Already have an Account? <Link to='/Login' className='text-danger  pe-auto text-decoration-none' onClick={navigateLogin}> Please Login</Link></p>
         </div>
     );
 };
