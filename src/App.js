@@ -6,6 +6,8 @@ import './App.css';
 import Login from './pages/Login/Login';
 import Header from './pages/Shared/Header/Header';
 import Footer from './pages/Shared/Footer/Footer';
+import Register from './pages/Register/Register';
+
 
 function App() {
   return (
@@ -14,8 +16,8 @@ function App() {
       <Routes>
         <Route path="/Home" element={<Home></Home>}></Route>
         <Route path="/About" element={<About></About>}></Route>
-
         <Route path="/Login" element={<Login></Login>}></Route>
+        <Route path="/Register" element={<Register></Register>}></Route>
 
 
       </Routes>
