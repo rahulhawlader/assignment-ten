@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Fat cutter",
+        "price": 3500,
+        "description": "sas ss sasas sss ssa fdd ",
+        "img": "https://i.ibb.co/KNCM66C/diet-plan1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Body Bulid",
+        "price": 4000,
+        "description": "sas ss sasas sss ssa fdd ",
+        "img": "https://i.ibb.co/Ksv9ksg/body-build.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Height increse",
+        "price": 2500,
+        "description": "sas ss sasas sss ssa fdd ",
+        "img": "https://i.ibb.co/M1qWFxM/Increase-Height.jpg"
+    }
+]
