@@ -1,23 +1,23 @@
 [
     {
         "id": 1,
-        "name": "Fat cutter",
+        "name": "Weight Loss",
         "price": 3500,
-        "description": "sas ss sasas sss ssa fdd ",
+        "description": "When we talk with clients about personal training sessions, weight loss almost always comes up. Perhaps you’re a little heavier than you’d like – or perhaps you’ve just got a few problem areas you’d like to tone. Then again, you might be hoping for a complete body transformation – a complete u-turn in how you view exercise and food.Whatever your goal, we’re absolutely certain we’ve got the skills and knowledge to get you there. As well as having the best personal trainers, we’ve also got outstanding boutique studios where you’ll have one-on-one training sessions – with every minute taking you closer to your goal.",
         "img": "https://i.ibb.co/KNCM66C/diet-plan1.jpg"
     },
     {
         "id": 2,
         "name": "Body Bulid",
         "price": 4000,
-        "description": "sas ss sasas sss ssa fdd ",
+        "description": "Build A Body Personal Training is a private, one-on-one personal training studio located in Green, Ohio. It is designed to help you feel comfortable in a fitness environment with no intimidation. We offer privacy (only you and your trainer will be in the studio at one time) along with a fitness program designed around your individual health and wellness goals. Every session will be different, and you'll learn to work with a variety of equipment modalities along with proper exercise techniques in order to keep you safe while obtaining your goals",
         "img": "https://i.ibb.co/Ksv9ksg/body-build.jpg"
     },
     {
         "id": 3,
         "name": "Height increse",
         "price": 2500,
-        "description": "sas ss sasas sss ssa fdd ",
+        "description": "I want you to be tall. Indians are genetically not short but Indians are in the last 15 countries when it comes to height and Body Mass Index due to lack of good nutrition and physical exercise. Its more because of the food and the lifestyle rather than the exercise. But please don't be disappointed if you can not become taller physically. You can always become a great person and stand taller in the society by having a very good body, doing good acts and becoming a very successful person.",
         "img": "https://i.ibb.co/M1qWFxM/Increase-Height.jpg"
     }
 ]

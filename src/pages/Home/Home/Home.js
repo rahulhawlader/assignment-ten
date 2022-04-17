@@ -1,9 +1,14 @@
 import React from 'react';
+import Benner from '../Benner/Benner';
+import Services from '../Services/Services';
+
+
 
 const Home = () => {
     return (
         <div>
-            <h1>hello</h1>
+            <Benner></Benner>
+            <Services></Services>
         </div>
     );
 };
