@@ -8,9 +8,17 @@ const Register = () => {
     const navigateLogin = () => {
         navigate('/Login')
     }
+
+    const handleRegister = (event) => {
+        event.preventdefault();
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        console.log(name, email, password)
+    }
     return (
         <div className='register-form'>
-            <form >
+            <form onSubmit={handleRegister}>
                 <h1>Please Register</h1>
                 <input type="text" name="name" id="" placeholder='Your Name' />
 
