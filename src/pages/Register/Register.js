@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Regiter.css'
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile, } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import SocialLogin from '../Login/SocialLogin/SocialLogin';
+
+
 
 
 const Register = () => {
@@ -11,7 +14,8 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [updateProfile, updating, error1] = useUpdateProfile(auth);
     const navigate = useNavigate();
 
     const navigateLogin = () => {
@@ -19,16 +23,20 @@ const Register = () => {
     }
 
     if (user) {
-        navigate('/home');
+        console.log('user', user);
     }
 
-    const handleRegister = event => {
+    const handleRegister = async (event) => {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-        createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
+        console.log('updateProfile');;
+
+        navigate('/home');
     }
     return (
         <div className='register-form'>
@@ -43,6 +51,7 @@ const Register = () => {
 
             </form>
             <p>Already have an Account? <Link to='/Login' className='text-danger  pe-auto text-decoration-none' onClick={navigateLogin}> Please Login</Link></p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };
