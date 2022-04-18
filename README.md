@@ -10,3 +10,15 @@ live site:(https://assignment-ten-bf51b.web.app/Services#pricing).
 * This page has some words about my life goals
 * And there's some writing about Firebase Authentic ETC.
 
+
+# framework and library use a projects
+
+
+* react-router
+
+* react-bootstrap
+* react-hooks
+* react-firebase-hooks
+* react-toast
+
+
