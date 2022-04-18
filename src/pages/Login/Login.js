@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 // useSendPasswordResetEmail
 import auth from '../../firebase.init';
 import SocialLogin from './SocialLogin/SocialLogin';
+import Loading from '../Loading/Loading';
 
 
 
@@ -19,8 +20,10 @@ const Login = () => {
     const navigate = useNavigate('');
     const location = useLocation();
 
-    let from = location.state?.from?.pathname || "/";
 
+
+    let from = location.state?.from?.pathname || "/";
+    let errorElement;
     const [
         signInWithEmailAndPassword,
         user,
@@ -31,9 +34,15 @@ const Login = () => {
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
 
-
+    if (loading || sending) {
+        return <Loading></Loading>
+    }
     if (user) {
         navigate(from, { replace: true });
+
+    }
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
 
     const handleSubmit = event => {
