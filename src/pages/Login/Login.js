@@ -1,10 +1,17 @@
 import React from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, } from 'react-bootstrap';
 import { useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
+// useSendPasswordResetEmail
 import auth from '../../firebase.init';
 import SocialLogin from './SocialLogin/SocialLogin';
+
+
 
 const Login = () => {
     const emailRef = useRef('');
@@ -21,6 +28,10 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+
+
     if (user) {
         navigate(from, { replace: true });
     }
@@ -35,6 +46,20 @@ const Login = () => {
     const navigateRegister = (event) => {
         navigate('/Register')
     }
+
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else {
+            toast('please enter your email address');
+        }
+    }
+
+
     return (
         <div className='container w-50 ms-auto'>
             <h1 className='text-primary text-center mt-2'>Please Login</h1>
@@ -55,11 +80,15 @@ const Login = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                    Submit
+                    Login
                 </Button>
             </Form>
-            <p>New To gym traning? <Link to='/Register' className='text-danger  pe-auto text-decoration-none' onClick={navigateRegister}> Please Register</Link></p>
+            <p>New To gym traning? <Link to='/Register' className='text-primary  pe-auto text-decoration-none' onClick={navigateRegister}> Please Register</Link></p>
+            <p>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
+
             <SocialLogin></SocialLogin>
+            <ToastContainer />
+
         </div>
     );
 };
